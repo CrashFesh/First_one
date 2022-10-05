@@ -15,7 +15,7 @@ try:
     GPIO.setup(leds[0], GPIO.OUT)
     GPIO.setup(aux[0], GPIO.OUT)
 
-    p_l = GPIO.PWM(leds[0], 5)
+    p_l = GPIO.PWM(leds[0], 100)
     p_l.start(0)
     p_w = GPIO.PWM(aux[0], 1000)
     p_w.start(0)
