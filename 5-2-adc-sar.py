@@ -11,8 +11,10 @@ troyka = 17
 
 max_volt = 3.3
 
+
 def inbin(num):
     return [int(i) for i in bin(num)[2:].zfill(8)]
+
 
 def adc():
     r = 256
@@ -31,16 +33,14 @@ def adc():
     volt = max_volt * left / (2**len(dac))
     print("Value:", left, "Volts: {:.4f} V".format(volt))
 
+
 try:
     GPIO.setup(dac, GPIO.OUT)
     GPIO.setup(troyka, GPIO.OUT, initial=GPIO.HIGH)
     GPIO.setup(comp, GPIO.IN)
-
-
     
     while True:
         adc()
-
 
 
 finally:
